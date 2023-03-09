@@ -1,10 +1,19 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {BrowserRouter, Route} from "react-router-dom";
+import {Routes} from "react-router";
+import Home from "./pages/Home";
+import Movie from "./pages/Movie";
 
 function App() {
   return (
     <div className="App">
-      redux toolkit
+      <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/movie/:id' element={<Movie />} />
+          </Routes>
+      </BrowserRouter>
     </div>
   );
 }
